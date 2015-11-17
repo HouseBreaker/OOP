@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Battery.cs" />
     <Compile Include="Laptop.cs" />
-    <Compile Include="LaptopShop.cs" />
+    <Compile Include="LaptopShopMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

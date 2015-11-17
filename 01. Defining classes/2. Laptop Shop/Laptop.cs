@@ -2,147 +2,143 @@
 using System.Text;
 using _2.Laptop_Shop;
 
-class Laptop
+internal class Laptop
 {
-	//model, manufacturer, processor, RAM, graphics card, HDD, screen, battery, battery life in hours and price.
-	private string model, manufacturer, cpu, gpu, hdd, screen;
-
-	private int ram;
 	private Battery battery;
 	private double batteryLife;
+	private string manufacturer, model, cpu, videoCard, screen;
+	private int hardDiskCapacity;
 	private decimal price;
 
+	private int memory;
+
 	public Laptop
-		(string model,
-		string manufacturer,
-		string cpu,
-		string gpu,
-		string hdd,
-		string screen,
-		int ram,
-		Battery battery,
-		double batterylife,
-		decimal price)
+		(string manufacturer, string model, string cpu, string videoCard, int hardDiskCapacity, string screen, int memory,
+			Battery battery,
+			double batteryLife, decimal price)
 	{
-		this.Model = model;
 		this.Manufacturer = manufacturer;
+		this.Model = model;
 		this.CPU = cpu;
-		this.GPU = gpu;
-		this.HDD = hdd;
+		this.VideoCard = videoCard;
+		this.HardDiskCapacity = hardDiskCapacity;
 		this.Screen = screen;
-		this.RAM = ram;
+		this.Memory = memory;
 		this.Battery = battery;
 		this.BatteryLife = batteryLife;
 		this.Price = price;
 	}
 
-	public Laptop(string model, string manufacturer)
+	public Laptop(string manufacturer, string model)
 	{
-		this.Model = model;
-		this.Manufacturer = manufacturer;
+		Model = model;
+		Manufacturer = manufacturer;
 	}
 
 	public string Model
 	{
-		get { return this.model; }
+		get { return model; }
 
 		set
 		{
 			CheckValidityStr(value);
-			this.model = value;
+			model = value;
 		}
 	}
 
 	public string Manufacturer
 	{
-		get { return this.manufacturer; }
+		get { return manufacturer; }
 
 		set
 		{
 			CheckValidityStr(value);
-			this.manufacturer = value;
+			manufacturer = value;
 		}
 	}
 
 	public string CPU
 	{
-		get { return this.cpu; }
+		get { return cpu; }
 
 		set
 		{
 			CheckValidityStr(value);
-			this.cpu = value;
+			cpu = value;
 		}
 	}
 
-	public int RAM
+	public int Memory
 	{
-		get { return this.ram; }
+		get { return memory; }
 
 		set
 		{
 			CheckValidityInt(value);
-			this.ram = value;
+			memory = value;
 		}
 	}
 
-	public string GPU
+	public string VideoCard
 	{
-		get { return this.gpu; }
+		get { return videoCard; }
 
 		set
 		{
 			CheckValidityStr(value);
-			this.gpu = value;
+			videoCard = value;
 		}
 	}
 
-	public string HDD
+	public int HardDiskCapacity
 	{
-		get { return this.hdd; }
+		get { return hardDiskCapacity; }
 
 		set
 		{
-			CheckValidityStr(value);
-			this.hdd = value;
+			CheckValidityInt(value);
+			hardDiskCapacity = value;
 		}
 	}
 
 	public string Screen
 	{
-		get { return this.screen; }
+		get { return screen; }
 
 		set
 		{
 			CheckValidityStr(value);
-			this.screen = value;
+			screen = value;
 		}
 	}
 
-	public Battery Battery { get; set; }
+	public Battery Battery
+	{
+		get { return battery; }
+		set { this.battery = value; }
+	}
 
 	public double BatteryLife
 	{
-		get { return this.batteryLife; }
+		get { return batteryLife; }
 
 		set
 		{
-			CheckValidityInt((int)value);
-			this.batteryLife = value;
+			CheckValidityInt((int) value);
+			batteryLife = value;
 		}
 	}
 
 	public decimal Price
 	{
-		get { return this.price; }
+		get { return price; }
 
 		set
 		{
-			CheckValidityInt((int)value);
-			this.price = value;
+			CheckValidityInt((int) value);
+			price = value;
 		}
 	}
-
 
 
 	//Validation methods
@@ -153,7 +149,7 @@ class Laptop
 			throw new ArgumentException(nameof(value) + "cannot be empty");
 		}
 	}
-	
+
 	private static void CheckValidityInt(int input)
 	{
 		if (input <= 0)
@@ -164,39 +160,66 @@ class Laptop
 
 	public override string ToString()
 	{
-		StringBuilder sb = new StringBuilder();
-		sb.AppendFormat($"Model - {Model}");
+		var sb = new StringBuilder();
+
+		sb.Append("Manufacturer:".PadRight(15) + Manufacturer);
 		sb.Append(Environment.NewLine);
 
-		sb.AppendFormat($"Manufacturer - {Manufacturer}");
+		sb.Append("Model:".PadRight(15) + Model);
+		sb.Append(Environment.NewLine);
+
+
 		if (CPU == null)
 		{
-			return sb.ToString();
+			return sb.ToString(); // we don't need to print stuff because we're using the simplified constructor
 		}
+
+		sb.Append("CPU:".PadRight(15) + CPU);
 		sb.Append(Environment.NewLine);
 
-		sb.AppendFormat($"CPU - {CPU}");
+		sb.Append("RAM:".PadRight(15));
+
+		if (memory < 1000)
+		{
+			sb.Append(Memory);
+			sb.Append("MB");
+		}
+		else
+		{
+			sb.Append((double) Memory/1000);
+			sb.Append("GB");
+		}
+
 		sb.Append(Environment.NewLine);
 
-		sb.AppendFormat($"RAM - {RAM}");
+		sb.Append($"GPU:".PadRight(15) + VideoCard);
 		sb.Append(Environment.NewLine);
 
-		sb.AppendFormat($"GPU - {GPU}");
+		sb.Append("HDD - ");
+
+		if (hardDiskCapacity < 1000)
+		{
+			sb.Append(HardDiskCapacity);
+			sb.Append("GB");
+		}
+		else
+		{
+			sb.Append((double) HardDiskCapacity/1000);
+			sb.Append("TB");
+		}
+
 		sb.Append(Environment.NewLine);
 
-		sb.AppendFormat($"HDD - {HDD}");
+		sb.Append($"Screen - {Screen}");
 		sb.Append(Environment.NewLine);
 
-		sb.AppendFormat($"Screen - {Screen}");
+		sb.Append($"Battery - {Battery}");
 		sb.Append(Environment.NewLine);
 
-		sb.AppendFormat($"Battery - {Battery}");
+		sb.Append($"Battery Life - {BatteryLife} hrs");
 		sb.Append(Environment.NewLine);
 
-		sb.AppendFormat($"Battery Life - {BatteryLife}");
-		sb.Append(Environment.NewLine);
-
-		sb.AppendFormat($"Price - {Price}");
-		return base.ToString();
+		sb.Append($"Price - {Price}BGN");
+		return sb.ToString();
 	}
 }

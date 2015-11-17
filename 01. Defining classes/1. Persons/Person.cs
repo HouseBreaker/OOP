@@ -1,29 +1,27 @@
 ﻿using System;
 
-class Person
+internal class Person
 {
-	private string name;
 	private int age;
 	private string email;
+	private string name;
 
 	public Person(string name, int age, string email)
 	{
-		this.Name = name;
-		this.Age = age;
-		this.Email = email;
+		Name = name;
+		Age = age;
+		Email = email;
 	}
 
 	public Person(string name, int age)
 		: this(name, age, null)
 	{
-
 	}
-
 
 
 	public string Name
 	{
-		get { return this.name; }
+		get { return name; }
 
 		set
 		{
@@ -31,13 +29,13 @@ class Person
 			{
 				throw new ArgumentException("Name cannot be blank");
 			}
-			this.name = value;
+			name = value;
 		}
 	}
 
 	public int Age
 	{
-		get { return this.age; }
+		get { return age; }
 
 		set
 		{
@@ -45,25 +43,25 @@ class Person
 			{
 				throw new ArgumentException("Age needs to be an integer from 1 to 100");
 			}
-			this.age = value;
+			age = value;
 		}
 	}
 
 	public string Email
 	{
-		get { return this.email; }
+		get { return email; }
 		set
 		{
 			if (value != null && !value.Contains("@"))
 			{
 				throw new ArgumentException("Email must be either null or contain an @");
 			}
-			this.email = value;
+			email = value;
 		}
 	}
 
 	public override string ToString()
 	{
-		return $"Name: {this.name}, Age: {this.age}, Email: {this.email ?? "not set"}";
+		return $"Name: {name}, Age: {age}, Email: {email ?? "not set"}";
 	}
 }
