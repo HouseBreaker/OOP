@@ -162,10 +162,12 @@ internal class Laptop
 	{
 		var sb = new StringBuilder();
 
-		sb.Append("Manufacturer:".PadRight(15) + Manufacturer);
+		const int padding = 15;
+
+		sb.Append("Manufacturer:".PadRight(padding) + Manufacturer);
 		sb.Append(Environment.NewLine);
 
-		sb.Append("Model:".PadRight(15) + Model);
+		sb.Append("Model:".PadRight(padding) + Model);
 		sb.Append(Environment.NewLine);
 
 
@@ -174,10 +176,10 @@ internal class Laptop
 			return sb.ToString(); // we don't need to print stuff because we're using the simplified constructor
 		}
 
-		sb.Append("CPU:".PadRight(15) + CPU);
+		sb.Append("CPU:".PadRight(padding) + CPU);
 		sb.Append(Environment.NewLine);
 
-		sb.Append("RAM:".PadRight(15));
+		sb.Append("RAM:".PadRight(padding));
 
 		if (memory < 1000)
 		{
@@ -192,10 +194,10 @@ internal class Laptop
 
 		sb.Append(Environment.NewLine);
 
-		sb.Append($"GPU:".PadRight(15) + VideoCard);
+		sb.Append("GPU:".PadRight(padding) + VideoCard);
 		sb.Append(Environment.NewLine);
 
-		sb.Append("HDD - ");
+		sb.Append("HDD".PadRight(padding));
 
 		if (hardDiskCapacity < 1000)
 		{
@@ -210,16 +212,16 @@ internal class Laptop
 
 		sb.Append(Environment.NewLine);
 
-		sb.Append($"Screen - {Screen}");
+		sb.Append("Screen:".PadRight(padding) + Screen);
 		sb.Append(Environment.NewLine);
 
-		sb.Append($"Battery - {Battery}");
+		sb.Append($"Battery:".PadRight(padding) + Battery);
 		sb.Append(Environment.NewLine);
 
-		sb.Append($"Battery Life - {BatteryLife} hrs");
+		sb.Append($"Battery Life:".PadRight(padding) + BatteryLife +  "hrs");
 		sb.Append(Environment.NewLine);
 
-		sb.Append($"Price - {Price}BGN");
+		sb.Append($"Price:".PadRight(padding) + Price + "BGN");
 		return sb.ToString();
 	}
 }
