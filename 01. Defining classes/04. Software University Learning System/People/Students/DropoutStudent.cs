@@ -16,7 +16,7 @@ namespace _04.Software_University_Learning_System.People.Students
 		public string DroupoutReason
 		{
 			get { return droupoutReason; }
-			set { droupoutReason = value; }
+			set { droupoutReason = CheckStr(ref value); }
 		}
 
 		public void Reapply()

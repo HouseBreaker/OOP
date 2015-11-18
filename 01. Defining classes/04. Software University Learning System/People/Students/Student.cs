@@ -17,7 +17,7 @@ namespace _04.Software_University_Learning_System.People.Students
 		public int StudentNumber
 		{
 			get { return studentNumber; }
-			set { studentNumber = value; }
+			set { studentNumber = CheckInt(ref value); }
 		}
 
 		public double AverageGrade

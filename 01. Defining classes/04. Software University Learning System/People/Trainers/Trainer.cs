@@ -9,9 +9,9 @@ namespace _04.Software_University_Learning_System.People.Trainers
 		{
 		}
 
-		protected static void CreateCourse(string name)
+		protected void CreateCourse(string name)
 		{
-			Console.WriteLine($"Course {name} has been created.");
+			Console.WriteLine($"Course {name} has been created by {FirstName} {LastName}.");
 		}
 	}
 }

@@ -42,12 +42,20 @@ namespace _04.Software_University_Learning_System.People
 			}
 		}
 
-		private string CheckStr(ref string value)
+		protected string CheckStr(ref string value)
 		{
 			if (string.IsNullOrEmpty(value.Trim()))
 			{
 				throw new ArgumentException(nameof(value), $"{nameof(value)} cannot be blank.");
 			}
+
+			return value;
+		}
+
+		protected int CheckInt(ref int value)
+		{
+			if (value < 0)
+				throw new ArgumentException(nameof(value), $"{nameof(value)} cannot be negative.");
 
 			return value;
 		}

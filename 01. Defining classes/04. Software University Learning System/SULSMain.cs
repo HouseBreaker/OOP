@@ -22,6 +22,7 @@ namespace _04.Software_University_Learning_System
 				new SeniorTrainer("Ivan", "Yonkov", 25),
 				new JuniorTrainer("Gosho", "Peshov", 19),
 			};
+
 			var filteredPeople = people.OfType<CurrentStudent>().OrderByDescending(a => a.AverageGrade);
 
 			Console.WriteLine(string.Join(Environment.NewLine, filteredPeople));

@@ -9,9 +9,9 @@ namespace _04.Software_University_Learning_System.People.Trainers
 		{
 		}
 
-		public static void DeleteCourse(string name)
+		public void DeleteCourse(string name)
 		{
-			Console.WriteLine($"Course {name} deleted.");
+			Console.WriteLine($"Course {name} deleted by {FirstName} {LastName}.");
 		}
 	}
 }

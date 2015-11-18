@@ -16,7 +16,10 @@ namespace _04.Software_University_Learning_System.People.Students
 		public string CurrentCourse
 		{
 			get { return currentCourse; }
-			set { currentCourse = value; }
+			set
+			{
+				currentCourse = CheckStr(ref value);
+			}
 		}
 
 		public override string ToString()
