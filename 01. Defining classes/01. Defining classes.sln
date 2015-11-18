@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Persons", "1. Persons\01. Persons.csproj", "{6C995817-7D29-4B40-A744-FEBDEF3E9E26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Persons", "01. Persons\01. Persons.csproj", "{6C995817-7D29-4B40-A744-FEBDEF3E9E26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Laptop Shop", "2. Laptop Shop\02. Laptop Shop.csproj", "{46D42B9E-52F6-4230-AD05-0EA3F0118288}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Laptop Shop", "02. Laptop Shop\02. Laptop Shop.csproj", "{46D42B9E-52F6-4230-AD05-0EA3F0118288}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. PC Catalog", "03. PC Catalog\03. PC Catalog.csproj", "{E6DC778F-2FC8-40F2-82BE-56BC41767ABC}"
 EndProject
