@@ -6,7 +6,7 @@ namespace _2.Enter_Numbers
 	{
 		private static void Main()
 		{
-			int start = 1, end = 100;
+			int start = 0, end = 100;
 			ReadNumber(start, end);
 		}
 
@@ -27,7 +27,7 @@ namespace _2.Enter_Numbers
 					}
 					if (currentNumber > prevNumber)
 					{
-						Console.Write($"   | valid! {tracker}/10\n");
+						Console.WriteLine($"   | valid! {tracker}/10");
 						prevNumber = currentNumber;
 						tracker++;
 					}
