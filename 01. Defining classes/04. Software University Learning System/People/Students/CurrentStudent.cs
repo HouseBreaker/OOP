@@ -18,7 +18,7 @@ namespace _04.Software_University_Learning_System.People.Students
 			get { return currentCourse; }
 			set
 			{
-				currentCourse = CheckStr(ref value);
+				currentCourse = CheckStr(value, "Current course");
 			}
 		}
 

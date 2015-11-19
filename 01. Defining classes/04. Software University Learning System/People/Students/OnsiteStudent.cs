@@ -16,7 +16,7 @@ namespace _04.Software_University_Learning_System.People.Students
 		public int NumberOfVisits
 		{
 			get { return numberOfVisits; }
-			set { numberOfVisits = CheckInt(ref value); }
+			set { numberOfVisits = CheckInt(value, "Number of visits"); }
 		}
 
 		public override string ToString()

@@ -16,7 +16,7 @@ namespace _04.Software_University_Learning_System.People.Students
 		public string DroupoutReason
 		{
 			get { return droupoutReason; }
-			set { droupoutReason = CheckStr(ref value); }
+			set { droupoutReason = CheckStr(value, "Droupout reason"); }
 		}
 
 		public void Reapply()
@@ -27,7 +27,7 @@ namespace _04.Software_University_Learning_System.People.Students
 		public override string ToString()
 		{
 			var sb = new StringBuilder(base.ToString());
-			sb.Append("Dropout reason".PadRight(Printpadding) + $"{droupoutReason}");
+			sb.AppendLine("Dropout reason".PadRight(Printpadding) + $"{droupoutReason}");
 			return sb.ToString();
 		}
 	}
