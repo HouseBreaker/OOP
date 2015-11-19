@@ -14,7 +14,6 @@ namespace _02.HTML_Dispatcher__star_
 			Console.WriteLine(HTMLDispatcher.CreateImage("google.com/jpg.jpg", "sample image", "Sample Image"));
 			Console.WriteLine(HTMLDispatcher.CreateURL("google.com", "Google", "Go to Google"));
 			Console.WriteLine(HTMLDispatcher.CreateInput("button", "do u want to continue", "yes"));
-
 		}
 	}
 }
