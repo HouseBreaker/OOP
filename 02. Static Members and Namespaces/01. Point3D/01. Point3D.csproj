@@ -54,6 +54,7 @@
     <Compile Include="Geometry\Geometry2D\Square.cs" />
     <Compile Include="Geometry\Geometry3D\Path3D.cs" />
     <Compile Include="Geometry\Geometry3D\Point3D.cs" />
+    <Compile Include="Geometry\Storage\GeometryTxtStorage.cs" />
     <Compile Include="PointMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -2,14 +2,6 @@
 {
 	public class Point3D
 	{
-		private double x, y, z;
-
-		private static readonly Point3D startingpoint = new Point3D(0, 0, 0);
-
-		public double X { get { return x; } set { x = value; } }
-		public double Y { get { return y; } set { y = value; } }
-		public double Z { get { return z; } set { z = value; } }
-
 		public Point3D(double x, double y, double z)
 		{
 			X = x;
@@ -17,18 +9,11 @@
 			Z = z;
 		}
 
-		public static Point3D StartingPoint
-		{
-			get { return Startingpoint;}
-		}
+		public double X { get; set; }
+		public double Y { get; set; }
+		public double Z { get; set; }
 
-		public static Point3D Startingpoint
-		{
-			get
-			{
-				return startingpoint;
-			}
-		}
+		public static Point3D StartingPoint { get; } = new Point3D(0, 0, 0);
 
 		public override string ToString()
 		{

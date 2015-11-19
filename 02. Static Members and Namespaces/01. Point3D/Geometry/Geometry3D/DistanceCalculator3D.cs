@@ -2,7 +2,7 @@
 
 namespace _02.Static_Members_and_Namespaces_Homework.Geometry.Geometry3D
 {
-	static class DistanceCalculator3D
+	public static class DistanceCalculator3D
 	{
 		public static double Calc(Point3D point1, Point3D point2)
 		{

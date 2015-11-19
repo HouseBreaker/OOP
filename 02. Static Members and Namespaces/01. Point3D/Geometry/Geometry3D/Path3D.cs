@@ -4,7 +4,6 @@ using System.Text;
 
 namespace _02.Static_Members_and_Namespaces_Homework.Geometry.Geometry3D
 {
-
 	public class Path3D : IEnumerable<Point3D>
 	{
 		private readonly List<Point3D> points;
@@ -24,21 +23,20 @@ namespace _02.Static_Members_and_Namespaces_Homework.Geometry.Geometry3D
 			return GetEnumerator();
 		}
 
-		public void Add(double x, double y, double z)
+		public void Add(Point3D point)
 		{
-			points.Add(new Point3D(x, y, z));
+			points.Add(point);
 		}
 
-		public string TotalLength()
+		public double TotalLength()
 		{
 			double totalLength = 0;
-			int totalPoints = 1;
 			for (int i = 0; i < points.Count - 1; i++)
 			{
 				totalLength += DistanceCalculator3D.Calc(points[i], points[i + 1]);
-				totalPoints++;
 			}
-			return $"Total length of {totalPoints} points: {totalLength}";
+
+			return totalLength;
 		}
 
 		public override string ToString()
@@ -47,12 +45,11 @@ namespace _02.Static_Members_and_Namespaces_Homework.Geometry.Geometry3D
 			int count = 1;
 			foreach (var point in points)
 			{
-				store.Append($"Point {count}: {point.X}, {point.Y}, {point.Z}\n");
+				store.AppendLine($"Point {count}: {point.X}, {point.Y}, {point.Z}");
 				count++;
 			}
-			string store2 = store.ToString().Trim();
-			return store2;
+
+			return store.ToString().Trim();
 		}
 	}
 }
-

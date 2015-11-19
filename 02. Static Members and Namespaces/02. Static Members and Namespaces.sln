@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Point3D", "01. Point3D\01. Point3D.csproj", "{F472710D-46D7-4C66-BAA3-BA365D06005B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. HTML Dispatcher (star)", "02. HTML Dispatcher (star)\02. HTML Dispatcher (star).csproj", "{55DB9572-4093-4CCF-8A10-1D16DE0C3BD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. HTML Dispatcher", "02. HTML Dispatcher (star)\02. HTML Dispatcher.csproj", "{55DB9572-4093-4CCF-8A10-1D16DE0C3BD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
