@@ -58,6 +58,8 @@
     <Compile Include="Geometry\Storage\GeometrySVGStorage.cs" />
     <Compile Include="Geometry\Storage\GeometryTxtStorage.cs" />
     <Compile Include="Geometry\Storage\GeometryXmlStorage.cs" />
+    <Compile Include="Geometry\UI\Screen2D.cs" />
+    <Compile Include="Geometry\UI\Screen3D.cs" />
     <Compile Include="PointMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
