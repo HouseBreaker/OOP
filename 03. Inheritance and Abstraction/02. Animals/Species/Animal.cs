@@ -1,9 +1,11 @@
 ﻿using System;
+using _02.Animals.Interfaces;
 
 namespace _02.Animals.Species
 {
-	public abstract class Animal
+	public abstract class Animal : ISoundProducible
 	{
+		protected const int PrintPadding = 8;
 		private string name;
 		private int age;
 		private string gender;
@@ -17,7 +19,7 @@ namespace _02.Animals.Species
 				{
 					throw new ArgumentNullException("name", "Name must not be empty.");
 				}
-				name = value;
+				this.name = value;
 			}
 		}
 
@@ -30,7 +32,7 @@ namespace _02.Animals.Species
 				{
 					throw new ArgumentOutOfRangeException("age", "Age must be positive.");
 				}
-				age = value;
+				this.age = value;
 			}
 		}
 
@@ -41,9 +43,9 @@ namespace _02.Animals.Species
 			{
 				if (string.IsNullOrWhiteSpace(value))
 				{
-					throw new ArgumentNullException("name", "Name must not be empty.");
+					throw new ArgumentNullException("gender", "Gender must not be empty.");
 				}
-				gender = value;
+				this.gender = value;
 			}
 		}
 
@@ -56,7 +58,12 @@ namespace _02.Animals.Species
 
 		public override string ToString()
 		{
-			return string.Format($"Species: {GetType().Name.PadRight(6)} Name: {name.PadRight(8)} Age: {age.ToString().PadRight(2)} Gender: {gender}");
+			return $"Species: {GetType().Name.PadRight(PrintPadding)} " +
+			       $"Name: {name.PadRight(PrintPadding)} " +
+			       $"Age: {age.ToString().PadRight(2)} " +
+			       $"Gender: {gender}";
 		}
+
+		public abstract void ProduceSound();
 	}
 }

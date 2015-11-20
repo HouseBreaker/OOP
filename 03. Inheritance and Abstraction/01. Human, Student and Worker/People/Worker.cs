@@ -1,27 +1,22 @@
 ﻿using System;
 
-namespace _03.Inheritance_and_Abstraction
+namespace _03.Inheritance_and_Abstraction.People
 {
 	public class Worker : Human
 	{
-		private double weekSalary;
+		private decimal weekSalary;
 		private int workHoursPerDay;
 
-		public Worker(string firstName, string lastName, double weekSalary, int workHoursPerDay) 
+		public Worker(string firstName, string lastName, decimal weekSalary, int workHoursPerDay)
 			: base(firstName, lastName)
 		{
-			this.FirstName = firstName;
-			this.LastName = lastName;
 			this.WeekSalary = weekSalary;
 			this.WorkHoursPerDay = workHoursPerDay;
 		}
 
-		public double WeekSalary
+		public decimal WeekSalary
 		{
-			get
-			{
-				return this.weekSalary;
-			}
+			get { return this.weekSalary; }
 			set
 			{
 				if (value < 0)
@@ -34,10 +29,7 @@ namespace _03.Inheritance_and_Abstraction
 
 		public int WorkHoursPerDay
 		{
-			get
-			{
-				return this.workHoursPerDay;
-			}
+			get { return this.workHoursPerDay; }
 			set
 			{
 				if (value < 0)
@@ -48,14 +40,17 @@ namespace _03.Inheritance_and_Abstraction
 			}
 		}
 
-		public double MoneyPerHour()
+		public decimal MoneyPerHour()
 		{
-			return WeekSalary / 7 / workHoursPerDay;
+			return WeekSalary/7/workHoursPerDay;
 		}
 
 		public override string ToString()
 		{
-			return $"Name: {FirstName.PadRight(6)} {LastName.PadRight(7)} Weekly Salary: {WeekSalary}, Work hours per day: {WorkHoursPerDay.ToString().PadRight(2)} Wage: ${MoneyPerHour():F2}";
+			return base.ToString() +
+			       $" Weekly Salary: {WeekSalary:C}, " +
+			       $"Work hours per day: {WorkHoursPerDay.ToString().PadRight(2)} " +
+			       $"Wage: ${MoneyPerHour():F2}/hr";
 		}
 	}
 }

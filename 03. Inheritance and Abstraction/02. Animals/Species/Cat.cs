@@ -3,15 +3,14 @@ using _02.Animals.Interfaces;
 
 namespace _02.Animals.Species
 {
-	class Cat : Animal, ISoundProducible
+	public class Cat : Animal
 	{
-		public Cat(string name, int age, string gender) 
+		public Cat(string name, int age, string gender)
 			: base(name, age, gender)
 		{
-
 		}
 
-		public void ProduceSound()
+		public override void ProduceSound()
 		{
 			Console.WriteLine($"{this.Name} says meow!");
 		}

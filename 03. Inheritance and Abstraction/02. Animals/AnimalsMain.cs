@@ -6,11 +6,11 @@ using _02.Animals.Species;
 
 namespace _02.Animals
 {
-	class AnimalsMain
+	internal class AnimalsMain
 	{
-		static void Main()
+		private static void Main()
 		{
-			Animal[] animalArray =
+			var animals = new List<Animal>
 			{
 				new Tomcat("Gosho", 10),
 				new Kitten("Isabella", 6),
@@ -22,31 +22,27 @@ namespace _02.Animals
 				new Cat("Bobo", 15, "male")
 			};
 
-			foreach (var animal in animalArray)
-			{
+			foreach (var animal in animals)
 				Console.WriteLine(animal);
-			}
+
+			Console.WriteLine();
+			Console.WriteLine("Make some noise!");
+
+			foreach (var animal in animals)
+				animal.ProduceSound();
 
 			Console.WriteLine();
 
-			List<string> selectedTypes = animalArray
-				.Select(p => p.GetType().Name)	//Get distinct names
-				.Distinct()						//Remove duplicates
-				.ToList();
-
-			selectedTypes.Sort();
-
-			foreach (var x in selectedTypes)
-			{
-				Console.WriteLine("Average age of {0} - {1:F0}",
-					x,
-					animalArray
-					.Where(p => p.GetType().Name == x)
-					.Average(p => p.Age));
-			}
-
-			//look at this shitty huge linq expression you can do this whole thing in tho
-			//animalArray.OrderBy(p => p.GetType().Name).Select(p => p.GetType().Name).Distinct().ToList().ForEach(x => Console.WriteLine("Average age of {0} - {1:F0}", x,animalArray.Where(p => p.GetType().Name == x).Average(p => p.Age))); 
+			animals
+				.OrderBy(p => p.GetType().Name)
+				.Select(p => p.GetType().Name)
+				.Distinct()
+				.ToList()
+				.ForEach(
+					animal =>
+						Console.WriteLine("Average age of the {0} {1:F0}",
+							$"{animal}s:".ToLower().PadRight(10),
+							animals.Where(p => p.GetType().Name == animal).Average(p => p.Age)));
 		}
 	}
 }

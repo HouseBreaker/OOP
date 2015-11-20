@@ -1,9 +1,10 @@
 ﻿using System;
 
-namespace _03.Inheritance_and_Abstraction
+namespace _03.Inheritance_and_Abstraction.People
 {
 	public abstract class Human
 	{
+		protected const int PrintPadding = 20;
 		private string firstName, lastName;
 
 		protected Human(string firstName, string lastName)
@@ -42,6 +43,11 @@ namespace _03.Inheritance_and_Abstraction
 				}
 				this.lastName = value;
 			}
+		}
+
+		public override string ToString()
+		{
+			return $"Name: {FirstName} {LastName}".PadRight(PrintPadding);
 		}
 	}
 }
