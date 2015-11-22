@@ -43,7 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\State.cs" />
     <Compile Include="CompanyMain.cs" />
+    <Compile Include="Enums\Department.cs" />
+    <Compile Include="People\Employees\Developer.cs" />
+    <Compile Include="People\Employees\Employee.cs" />
+    <Compile Include="Commodities\Project.cs" />
+    <Compile Include="People\Employees\Manager.cs" />
+    <Compile Include="People\Person.cs" />
+    <Compile Include="People\Employees\RegularEmployee.cs" />
+    <Compile Include="Commodities\Sale.cs" />
+    <Compile Include="People\Employees\SalesEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
