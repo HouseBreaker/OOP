@@ -19,9 +19,14 @@ namespace _03.Company.People.Employees
 
 		public override string ToString()
 		{
-			StringBuilder sb = new StringBuilder(base.ToString());
-			sb.Append($"\nSales: {Sales.Count}: {string.Join(", ", Sales.Select(a => a.Name))}");
-            return sb.ToString();
+			var sb = new StringBuilder(base.ToString());
+
+			sb.AppendLine();
+			sb.Append(Tab + "Sales".PadRight(PrintPadding));
+			sb.Append($"{Sales.Count}: ");
+			sb.Append(string.Join(", ", Sales.Select(a => $"{a.Name} ({a.Price:C})")));
+
+			return sb.ToString();
 		}
 	}
 }

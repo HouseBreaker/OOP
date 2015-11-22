@@ -14,5 +14,10 @@ namespace _03.Company.Commodities
 			this.Date = date;
 			this.Price = price;
 		}
+
+		public override string ToString()
+		{
+			return this.Name + " - " + this.Price;
+		}
 	}
 }

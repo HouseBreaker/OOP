@@ -20,10 +20,10 @@ namespace _03.Company.People.Employees
 		public override string ToString()
 		{
 			var sb = new StringBuilder(base.ToString());
-			sb.Append(tab + "Employees".PadRight(PrintPadding));
+			sb.Append(Tab + "Employees".PadRight(PrintPadding));
 
-			sb.Append(Employees.Count + ": " + string.Join(", ", Employees.Select(a => $"{a.FirstName} {a.LastName}")));
-			return sb.ToString();
+			sb.Append($"{Employees.Count}: " + string.Join(", ", Employees.Select(a => $"{a.FirstName} {a.LastName}")));
+            return sb.ToString();
 		}
 	}
 }

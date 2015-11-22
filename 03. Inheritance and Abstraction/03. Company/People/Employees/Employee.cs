@@ -25,8 +25,8 @@ namespace _03.Company.People.Employees
 		public override string ToString()
 		{
 			var sb = new StringBuilder(base.ToString() + Environment.NewLine);
-			sb.AppendLine(tab + "Salary".PadRight(PrintPadding) + Salary.ToString("C"));
-			sb.AppendLine(tab + "Department".PadRight(PrintPadding) + Department);
+			sb.AppendLine(Tab + "Salary".PadRight(PrintPadding) + Salary.ToString("C"));
+			sb.Append(Tab + "Department".PadRight(PrintPadding) + Department);
 
 			return sb.ToString();
 		}

@@ -1,19 +1,23 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace _03.Company.People
 {
 	public abstract class Person
 	{
 		protected const int PrintPadding = 12;
-		protected const string tab = "   ";
+		protected const string Tab = "   ";
 
 		private string firstName, lastName, id;
+		public string Name { get; }
 
 		protected Person(string firstName, string lastName, string id)
 		{
 			this.FirstName = firstName;
 			this.LastName = lastName;
 			this.Id = id;
+
+			this.Name = this.FirstName + " " + this.LastName;
 		}
 
 		public string FirstName
@@ -54,9 +58,11 @@ namespace _03.Company.People
 
 		public override string ToString()
 		{
-			return $"{FirstName} {LastName} - {GetType().Name}:"
+			var delimitedType = Regex.Replace(GetType().Name, @"([a-z])([A-Z])", "$1 $2");
+
+			return $"{FirstName} {LastName} - {delimitedType}:"
 			       + Environment.NewLine +
-			       tab + $"ID".PadRight(PrintPadding) + Id;
+			       Tab + $"ID".PadRight(PrintPadding) + Id;
 		}
 	}
 }
