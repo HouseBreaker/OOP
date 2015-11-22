@@ -12,7 +12,9 @@ namespace _03.Company
 	internal class CompanyMain
 	{
 		private static void Main()
-		{
+		{ 
+			// someone please explain to me why i'm supposed to use interfaces when my setters ensure data will be valid
+
 			Console.OutputEncoding = Encoding.UTF8;
 			Thread.CurrentThread.CurrentCulture = new CultureInfo("bg-BG");
 

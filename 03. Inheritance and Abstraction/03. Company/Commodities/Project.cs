@@ -32,7 +32,7 @@ namespace _03.Company.Commodities
 
 		public override string ToString()
 		{
-			return $"Name: {Name}";
+			return $"Name: {Name}, Start date: {StartDate}, Details: {Details}, State: {ProjectState}";
 		}
 	}
 }
