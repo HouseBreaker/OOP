@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using _03.Company.Commodities;
 using _03.Company.Enums;
+using _03.Company.Interfaces;
 
 namespace _03.Company.People.Employees
 {
-	public class Developer : RegularEmployee
+	public class Developer : Employee, IDeveloper
 	{
-		public List<Project> Projects { get; set; }
+		public List<IProject> Projects { get; set; }
 
 		public Developer(string firstName, string lastName, string id, decimal salary, Department department,
-			List<Project> projects)
+			List<IProject> projects)
 			: base(firstName, lastName, id, salary, department)
 		{
 			this.Projects = projects;
@@ -23,7 +23,7 @@ namespace _03.Company.People.Employees
 
 			sb.AppendLine();
 			sb.Append(Tab + "Projects: ".PadRight(PrintPadding));
-			sb.Append(string.Join(", ", Projects.Select(a => $"{a.Name} ({a.ProjectState})")));
+			sb.Append(string.Join(", ", Projects.Select(a => $"{a.Name} ({a.State})")));
 			
 			return sb.ToString();
 		}

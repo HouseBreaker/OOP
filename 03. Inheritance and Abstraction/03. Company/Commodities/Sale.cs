@@ -1,11 +1,14 @@
 ﻿using System;
+using _03.Company.Interfaces;
 
 namespace _03.Company.Commodities
 {
-	public class Sale
+	public class Sale : ISale
 	{
 		public string Name { get; set; }
+
 		public DateTime Date { get; set; }
+
 		public decimal Price { get; set; }
 
 		public Sale(string name, DateTime date, decimal price)

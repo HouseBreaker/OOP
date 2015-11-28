@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using _03.Company.Enums;
+using _03.Company.Interfaces;
 
 namespace _03.Company.People.Employees
 {
-	public class Manager : Employee
+	public class Manager : Employee, IManager
 	{
+		public List<IEmployee> Employees { get; set; }
+
 		public Manager(string firstName, string lastName, string id, decimal salary, Department department,
-			List<Employee> employees) :
+			List<IEmployee> employees) :
 				base(firstName, lastName, id, salary, department)
 		{
 			this.Employees = employees;
 		}
-
-		public List<Employee> Employees { get; set; }
 
 		public override string ToString()
 		{

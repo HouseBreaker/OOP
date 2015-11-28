@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using _03.Company.Interfaces;
 
 namespace _03.Company.People
 {
-	public abstract class Person
+	public abstract class Person : IPerson
 	{
 		protected const int PrintPadding = 12;
 		protected const string Tab = "   ";
 
 		private string firstName, lastName, id;
+
 		public string Name { get; }
 
 		protected Person(string firstName, string lastName, string id)
@@ -23,19 +25,19 @@ namespace _03.Company.People
 		public string FirstName
 		{
 			get { return firstName; }
-			protected set { firstName = ValidateStr(value, "First name"); }
+			set { firstName = ValidateStr(value, "First name"); }
 		}
 
 		public string LastName
 		{
 			get { return lastName; }
-			protected set { lastName = ValidateStr(value, "Last name"); }
+			set { lastName = ValidateStr(value, "Last name"); }
 		}
 
 		public string Id
 		{
 			get { return id; }
-			protected set { id = ValidateStr(value, "ID"); }
+			set { id = ValidateStr(value, "ID"); }
 		}
 
 		protected static string ValidateStr(string value, string param)
@@ -60,9 +62,8 @@ namespace _03.Company.People
 		{
 			var delimitedType = Regex.Replace(GetType().Name, @"([a-z])([A-Z])", "$1 $2");
 
-			return $"{FirstName} {LastName} - {delimitedType}:"
-			       + Environment.NewLine +
-			       Tab + $"ID".PadRight(PrintPadding) + Id;
+			return $"{FirstName} {LastName} - {delimitedType}:\n"
+			       + Tab + "ID".PadRight(PrintPadding) + Id;
 		}
 	}
 }

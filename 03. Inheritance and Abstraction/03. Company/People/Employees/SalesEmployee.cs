@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using _03.Company.Commodities;
 using _03.Company.Enums;
+using _03.Company.Interfaces;
 
 namespace _03.Company.People.Employees
 {
-	public class SalesEmployee : RegularEmployee
+	public class SalesEmployee : RegularEmployee, ISalesEmployee
 	{
-		public List<Sale> Sales { get; set; }
+		public List<ISale> Sales { get; set; }
 
-		public SalesEmployee(string firstName, string lastName, string id, decimal salary, List<Sale> sales)
+		public SalesEmployee(string firstName, string lastName, string id, decimal salary, List<ISale> sales)
 			: base(firstName, lastName, id, salary, Department.Sales)
 		{
 			this.Sales = sales;

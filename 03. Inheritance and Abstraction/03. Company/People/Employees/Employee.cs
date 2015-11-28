@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Text;
 using _03.Company.Enums;
+using _03.Company.Interfaces;
 
 namespace _03.Company.People.Employees
 {
-	public abstract class Employee : Person
+	public abstract class Employee : Person, IEmployee
 	{
 		private decimal salary;
 		public Department Department { get; set; }
