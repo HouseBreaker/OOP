@@ -23,7 +23,7 @@ namespace _03.Company
 
 			var marketingRep = new SalesEmployee("Ivo", "Peshov", "333drivesales", 500m, new List<ISale>
 			{
-				new Sale("Super toothpaste Colgate Max #000", DateTime.Today, 500m)
+				new Sale("Super toothpaste Colgate Max #FFF", DateTime.Today, 500m)
 			});
 
 			var salesman = new SalesEmployee("Ivan", "Ivanov", "234235", 5000m, new List<ISale>()
