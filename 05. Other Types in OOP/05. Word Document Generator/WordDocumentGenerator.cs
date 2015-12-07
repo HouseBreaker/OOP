@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using Novacode;
@@ -68,7 +67,7 @@ namespace _05.Word_Document_Generator
 			prizeParagraph.Alignment = Alignment.center;
 
 			prizeParagraph.InsertText("The top 3 teams will receive a ");
-			prizeParagraph.InsertText("SPECTACULAR", false, bold);
+			prizeParagraph.InsertText("spectacular".ToUpper(), false, bold);
 			prizeParagraph.InsertText(" prize:");
 
 			Formatting bigPrizeFormatting = new Formatting
