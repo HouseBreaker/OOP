@@ -1,14 +1,37 @@
 ﻿The differences between Value and Reference types:
-•	Which .NET data types are value types? Which types are reference types?
-		
+	Which .NET data types are value types? 
+		Primitive Value Types: such as Integer, Long, Float, etc.
+		Structures
+		Enums
+
+	Which types are reference types?
+		Self-Descriptive Types (Classes, Interfaces, Arrays)
+		Pointers
+		Dynamic
+		Boxed value types
+
 •	How do value and reference types differ when assigned to a variable? 
-		
+		In value types, a new copy is assigned to the variable.
+		In reference types, the variable is a pointer to the value in memory, therefore several variables can point to the same object.
+
 •	How do value and reference types behave when passed as argument to a method?
-		
+		Value types are copied, reference types are passed as a pointer to memory.
+
 •	Where in memory are value types allocated? Where are reference types allocated?
-		
+		Value types are allocated in the stack, reference types are allocated in the managed heap
+
 •	What is data mutation? Can value types be mutated? Can reference types be mutated?
+		Data mutation is changing the value of a variable partially. The types where you can do that are called mutable.
 		
+			Primitive value types are immutable, along with some built-in reference types (string for example).
+			Reference types can be mutable.
+
 •	What is the difference between mutating and setting (assigning) a variable? Give examples.
-		
+		In this example, a mutable type is the StringBuilder, and the immutable type is the string.
+		string s = "qwerty";
+		s[2] = "x"; // this will not compile, as you're attempting to mutate an immutable type
+
+		StringBuilder sb = new StringBuilder("qwerty");
+		sb[2] = "x"; // this will compile, as StringBuilder is mutable.
+
 •	What are the out and ref keywords used for? In what do they differ?
