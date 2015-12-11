@@ -20,7 +20,7 @@ namespace _02.Customer
 				},
 				CustomerType.Regular);
 
-			var customer2 = (Customer) customer1.Clone(); // using the old way to cast because checking for null is compile-time (ie. safer)
+			var customer2 = customer1.Clone();
 
 			customer2.Payments.Add(new Payment("Chewing gum", 0.90m)); // he's unequal to customer1 now
 

@@ -119,10 +119,8 @@ namespace _02.Customer
 
 		public override bool Equals(object param)
 		{
-			// If the cast is invalid, the result will be null
 			Customer customer = param as Customer;
 
-			// Check if we have valid not null Student object
 			if (customer == null)
 			{
 				return false;
@@ -173,7 +171,12 @@ namespace _02.Customer
 			       CustomerType.GetHashCode();
 		}
 
-		public object Clone()
+		object ICloneable.Clone()
+		{
+			return Clone();
+		}
+
+		public Customer Clone()
 		{
 			return new Customer(firstName, middleName, LastName, Id, Address, Phone, Email, new List<Payment>(Payments),
 				CustomerType);

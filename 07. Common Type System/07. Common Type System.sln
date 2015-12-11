@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Value and Reference Typ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Customer", "02. Customer\02. Customer.csproj", "{DC51C246-173E-403E-B3B6-ADEEE4CA6086}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. String Disperser", "03. String Disperser\03. String Disperser.csproj", "{474ECFC9-0718-47F3-80B7-059C8E6D9767}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DC51C246-173E-403E-B3B6-ADEEE4CA6086}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC51C246-173E-403E-B3B6-ADEEE4CA6086}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC51C246-173E-403E-B3B6-ADEEE4CA6086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{474ECFC9-0718-47F3-80B7-059C8E6D9767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474ECFC9-0718-47F3-80B7-059C8E6D9767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474ECFC9-0718-47F3-80B7-059C8E6D9767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474ECFC9-0718-47F3-80B7-059C8E6D9767}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
