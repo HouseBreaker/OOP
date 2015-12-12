@@ -34,4 +34,8 @@
 		StringBuilder sb = new StringBuilder("qwerty");
 		sb[2] = "x"; // this will compile, as StringBuilder is mutable.
 
-•	What are the out and ref keywords used for? In what do they differ?
+•	What are the out and ref keywords used for? 
+		out and ref mean that the parameter is passed by reference.
+	
+		In what way do they differ?
+		When you use the out keyword for a variable in a method signature, after you invoke it, the variable is definitely assigned at the end.
